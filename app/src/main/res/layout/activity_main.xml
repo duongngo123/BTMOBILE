@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
-    android:background="#121212">
+    android:background="@android:color/white">
 
     <!-- Tiêu đề -->
     <TextView
@@ -16,8 +16,8 @@
         android:text="Welcome to My App"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="32dp"/>
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="32dp" />
 
     <!-- Ô nhập Username -->
     <com.google.android.material.textfield.TextInputLayout
@@ -31,7 +31,9 @@
             android:id="@+id/edtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Ô nhập Password -->
@@ -46,7 +48,9 @@
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Nút Login -->
@@ -55,20 +59,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:backgroundTint="#BB86FC"
         android:textColor="@android:color/black"
+        android:backgroundTint="#E0E0E0"
         android:layout_marginBottom="12dp"
-        android:padding="12dp"
-        android:background="@drawable/rounded_button"/>
+        android:padding="12dp" />
 
     <!-- Nút Create Account -->
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnCreateAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Account"
-        android:backgroundTint="#BB86FC"
         android:textColor="@android:color/black"
-        android:padding="12dp"
-        android:background="@drawable/rounded_button"/>
+        android:backgroundTint="#E0E0E0"
+        android:padding="12dp" />
 </LinearLayout>
