@@ -1,76 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="24dp"
     android:background="@android:color/white">
 
-    <!-- Tiêu đề -->
-    <TextView
-        android:id="@+id/tvTitle"
+    <!-- Logo + chữ Login -->
+    <LinearLayout
+        android:id="@+id/logoLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to My App"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="32dp" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
-    <!-- Ô nhập Username -->
-    <com.google.android.material.textfield.TextInputLayout
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/logo"
+            android:contentDescription="App Logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Nội dung chính dưới logo -->
+    <LinearLayout
+        android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginBottom="16dp">
+        android:orientation="vertical"
+        android:layout_below="@id/logoLayout"
+        android:layout_marginTop="24dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtUsername"
+        <!-- Tiêu đề -->
+        <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:layout_marginBottom="32dp"
+            android:gravity="start"
+            android:text="Bóng rổ"
             android:textColor="@android:color/black"
-            android:textColorHint="@android:color/darker_gray" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <!-- Ô nhập Password -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginBottom="24dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtPassword"
+        <!-- Ô nhập Username -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:hint="Username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Ô nhập Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Nút Login -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
             android:textColor="@android:color/black"
-            android:textColorHint="@android:color/darker_gray" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp" />
 
-    <!-- Nút Login -->
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#E0E0E0"
-        android:layout_marginBottom="12dp"
-        android:padding="12dp" />
+        <!-- Nút Create Account -->
+        <Button
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textColor="@android:color/black"
+            android:background="@drawable/rounded_button"
+            android:padding="12dp" />
+    </LinearLayout>
 
-    <!-- Nút Create Account -->
-    <Button
-        android:id="@+id/btnCreateAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#E0E0E0"
-        android:padding="12dp" />
-</LinearLayout>
+</RelativeLayout>

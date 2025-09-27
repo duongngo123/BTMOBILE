@@ -10,7 +10,7 @@
         android:id="@+id/tvHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, welcome back!"
+        android:text="Chào bạn đã đến với ứng dụng  "
         android:textSize="22sp"
         android:textStyle="bold"/>
 </LinearLayout>

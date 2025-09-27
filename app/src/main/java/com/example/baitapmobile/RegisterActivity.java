@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -23,18 +22,15 @@ public class RegisterActivity extends AppCompatActivity {
         btnCreateAccount = findViewById(R.id.btnCreateAccount);
 
         btnCreateAccount.setOnClickListener(v -> {
-            String name = etName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim();
-            String pass = etPassword.getText().toString().trim();
-            String confirm = etConfirmPassword.getText().toString().trim();
+            String name = etName.getText().toString();
+            String email = etEmail.getText().toString();
+            String pass = etPassword.getText().toString();
+            String confirm = etConfirmPassword.getText().toString();
 
-            if (name.isEmpty() || email.isEmpty() || pass.isEmpty() || confirm.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            } else if (!pass.equals(confirm)) {
+            if (!pass.equals(confirm)) {
                 Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Account Created for " + name, Toast.LENGTH_SHORT).show();
-                finish(); // quay lại màn hình Login
             }
         });
     }
